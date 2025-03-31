@@ -1,6 +1,6 @@
-#**House Price Prediction**
+#**House Price Prediction**#
 
-*Deskripsi Proyek*
+*Deskripsi Proyek :*
 Proyek ini bertujuan untuk membangun model machine learning yang dapat memprediksi harga rumah berdasarkan dataset yang tersedia. Model ini dilatih menggunakan data yang mencakup berbagai fitur rumah, seperti luas tanah, jumlah kamar, dan lokasi. Dengan adanya prediksi harga ini, calon pembeli atau investor dapat memiliki gambaran harga properti berdasarkan karakteristiknya.
 
 *Fitur Proyek*
