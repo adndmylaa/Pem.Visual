@@ -23,5 +23,3 @@
 3️⃣ **Jika waktu habis** → Game berakhir & skor ditampilkan  
 
 ---
-
-🎯 **Ringkas, interaktif, dan seru!** 🚀
