@@ -1,0 +1,78 @@
+using System;
+using System.Timers;
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+
+namespace MathRushBlazor
+{
+    public partial class MathRushGame : ComponentBase
+    {
+        private int score = 0;
+        private int timeLeft = 10;
+        private int correctAnswer;
+        private System.Timers.Timer timer;
+        private Random random = new Random();
+        private string question = "Loading...";
+        private string timerText = "Time: 10s";
+        private string scoreText = "Score: 0";
+        private string userAnswer = "";
+
+        protected override void OnInitialized()
+        {
+            GenerateQuestion();
+            StartTimer();
+        }
+
+        private void GenerateQuestion()
+        {
+            int num1 = random.Next(1, 11);
+            int num2 = random.Next(1, 11);
+            correctAnswer = num1 + num2;
+            question = $"{num1} + {num2} = ?";
+        }
+
+        private void CheckAnswer()
+        {
+            if (int.TryParse(userAnswer, out int answer) && answer == correctAnswer)
+            {
+                score++;
+                scoreText = $"Score: {score}";
+                ResetTimer();
+                GenerateQuestion();
+            }
+            userAnswer = "";
+        }
+
+        private void ResetTimer()
+        {
+            timeLeft = 10;
+            timerText = $"Time: {timeLeft}s";
+        }
+
+        private void StartTimer()
+        {
+            timer = new System.Timers.Timer(1000);
+            timer.Elapsed += TimerElapsed;
+            timer.Start();
+        }
+
+        private void TimerElapsed(object sender, ElapsedEventArgs e)
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft--;
+                timerText = $"Time: {timeLeft}s";
+                InvokeAsync(StateHasChanged);
+            }
+            else
+            {
+                timer.Stop();
+                InvokeAsync(() => {
+                    timerText = "Game Over!";
+                    scoreText = $"Final Score: {score}";
+                    StateHasChanged();
+                });
+            }
+        }
+    }
+}
