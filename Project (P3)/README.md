@@ -1,6 +1,3 @@
-Berikut ringkasan sederhana dari file **mathrush.html**:  
-
----
 
 ### **📌 Struktur & Fungsi Utama**  
 
