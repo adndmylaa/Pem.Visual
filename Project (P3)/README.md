@@ -9,7 +9,7 @@
 
 ---
 
-#### **2️⃣ Logika Permainan (JavaScript)**  
+#### **2️⃣ Logika Permainan**  
 ✅ **Membuat soal acak** → Penjumlahan angka 1-10  
 ✅ **Pemain menjawab** → Jika benar, skor naik & soal baru muncul  
 ✅ **Timer berjalan** → Berkurang setiap detik  
