@@ -30,8 +30,7 @@
 ---
 
 ### 🧾 **Data yang Bisa Disimpan dalam Database**
-
-Jika ingin mengembangkan game ini lebih lanjut (misalnya membuat sistem login, leaderboard, atau statistik pemain), berikut beberapa **data penting** yang bisa disimpan:
+berikut beberapa **data penting** yang bisa disimpan:
 
 | 🗂️ Nama Data         | 📄 Deskripsi                                        |
 |----------------------|-----------------------------------------------------|
