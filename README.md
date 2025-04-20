@@ -56,6 +56,8 @@ Jika ingin mengembangkan game ini lebih lanjut (misalnya membuat sistem login, l
 - Timer diatur dengan `setInterval()` selama 1 detik.
 - Game akan **restart otomatis** setelah game over.
 
+---
+
 ### 🎨 **Analisis Desain Figma**
 (Link Figma: https://www.figma.com/design/88kNkf1OP7Rq2e5fz3ttJF/MathRush?node-id=0-1)
 
