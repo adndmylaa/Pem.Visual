@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "CMH6HzH8AcI=",
+  "success": true,
+  "projectFilePath": "D:\\MathRushWinForms\\MathRushWinForms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ACER\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.117\\stub.system.data.sqlite.core.netstandard.1.0.117.nupkg.sha512",
+    "C:\\Users\\ACER\\.nuget\\packages\\system.data.sqlite.core\\1.0.117\\system.data.sqlite.core.1.0.117.nupkg.sha512"
+  ],
+  "logs": []
+}
