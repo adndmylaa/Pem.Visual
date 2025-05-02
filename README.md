@@ -1,63 +1,68 @@
 ## 🧠 **MathRush - Game Matematika Sederhana**
 
-**MathRush** adalah game edukatif berbasis web yang menguji kecepatan dan ketepatan dalam menjawab soal penjumlahan sederhana.
+**MathRush** adalah game edukatif berbasis desktop (Windows Forms - C#) yang menguji kecepatan dan ketepatan pemain dalam menjawab soal matematika dasar (penjumlahan).
 
 ---
 
-### 📌 **Struktur Tampilan**
+### 📌 **Struktur Tampilan Aplikasi**
 
-- 🔢 **Soal Matematika** → Ditampilkan secara acak (angka 1–10)  
-- ⏱️ **Timer 10 Detik** → Menghitung mundur tiap soal  
-- 📝 **Input Jawaban** → Kolom isian + tombol submit  
-- ⭐ **Skor Pemain** → Bertambah saat menjawab dengan benar  
+- 🔢 **Soal Matematika** → Ditampilkan secara acak (angka 1–10).
+- ⏱️ **Timer 10 Detik** → Menghitung mundur tiap soal.
+- 📝 **Input Jawaban** → Kolom teks + tombol Submit.
+- ⭐ **Skor Pemain** → Bertambah jika jawaban benar.
+- 🗂️ **Form Kelola Data** → Menyimpan dan mengedit skor pemain (CRUD).
 
 ---
 
 ### 🧩 **Fungsi Utama & Alur Game**
 
 #### 🔄 **ALUR PERMAINAN:**
-1. **Game dimulai otomatis** → Soal pertama langsung muncul.
-2. **Pemain menjawab soal** → Jika benar:
-   - Skor naik.
-   - Timer di-reset ke 10 detik.
-   - Soal baru ditampilkan.
-3. **Jika salah / tidak dijawab**:
-   - Timer tetap berjalan.
-4. **Jika waktu habis**:
-   - Muncul pesan *Game Over* beserta skor akhir.
-   - Halaman reload untuk memulai ulang game.
+1. **Klik tombol Mulai** → Soal pertama muncul dan timer dimulai.
+2. **Pemain menjawab soal**:
+   - Jika jawaban **benar**:
+     - Skor bertambah.
+     - Timer di-reset ke 10 detik.
+     - Soal baru ditampilkan.
+   - Jika jawaban **salah**:
+     - Timer tetap berjalan.
+3. **Jika waktu habis**:
+   - Game berhenti.
+   - Skor akhir disimpan dan ditampilkan.
 
 ---
 
-### 🧾 **Data yang Bisa Disimpan dalam Database**
-berikut beberapa **data penting** yang bisa disimpan:
+### 🧾 **Data yang Disimpan ke Database (SQLite)**
 
 | 🗂️ Nama Data         | 📄 Deskripsi                                        |
 |----------------------|-----------------------------------------------------|
-| `username`           | Nama pengguna atau ID pemain                        |
-| `score`              | Skor akhir yang diperoleh saat bermain              |
-| `start_time`         | Waktu saat permainan dimulai                        |
-| `end_time`           | Waktu saat permainan berakhir                       |
-| `duration`           | Total durasi permainan (bisa dihitung dari start-end) |
-| `correct_answers`    | Jumlah soal yang dijawab dengan benar               |
-| `total_questions`    | Total soal yang muncul selama sesi bermain          |
+| `name`               | Nama pengguna                                       |
+| `score`              | Skor akhir saat permainan                           |
 
-**Catatan:** Data di atas bisa digunakan untuk:
+Data ini digunakan untuk:
 - Menampilkan **leaderboard**.
-- Melacak **riwayat permainan pengguna**.
-- Menganalisis **performa pemain dari waktu ke waktu**.
+- Mengelola data pengguna melalui form **CRUD**.
 
 ---
 
-### ⚙️ **Cara Kerja Singkat (Teknis)**
-- Soal dihasilkan secara acak menggunakan `Math.random()`.
-- Jawaban dicek saat tombol **Submit** diklik.
-- Timer diatur dengan `setInterval()` selama 1 detik.
-- Game akan **restart otomatis** setelah game over.
+### ⚙️ **Detail Teknis (C# WinForms)**
+
+- Soal dihasilkan acak melalui `Random`.
+- Timer menggunakan `System.Timers.Timer`.
+- Event handler seperti `btnStart_Click`, `btnSubmit_Click`, dan `OnTimedEvent` digunakan untuk mengontrol jalannya permainan.
+- Data disimpan ke database lokal SQLite melalui class `DatabaseHelper.cs`.
+- Form CRUD terpisah (`FormCRUD.cs`) untuk melihat, menambah, mengedit, dan menghapus data skor.
+
+---
+
+### 🎨 **Desain UI**
+UI dibuat menggunakan komponen standar **Windows Forms**, terdiri dari:
+- Label (untuk soal dan skor),
+- TextBox (untuk jawaban),
+- Button (Mulai, Submit, Kelola Data),
+- Timer untuk hitung mundur,
+- ListBox untuk menampilkan leaderboard.
 
 ---
 
 ### 🎨 **Analisis Desain Figma**
 (Link Figma: https://www.figma.com/design/88kNkf1OP7Rq2e5fz3ttJF/MathRush?node-id=0-1)
-
-
