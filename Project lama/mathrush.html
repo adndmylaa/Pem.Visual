@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathRush - Game Matematika</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #question {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #timer {
+            font-size: 20px;
+            color: red;
+        }
+        input {
+            font-size: 18px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MathRush</h1>
+    <p id="question">Loading...</p>
+    <p id="timer">Time: 10s</p>
+    <input type="number" id="answer" placeholder="Jawaban">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="score">Score: 0</p>
+
+    <script>
+        let score = 0;
+        let timeLeft = 10;
+        let correctAnswer;
+
+        function generateQuestion() {
+            let num1 = Math.floor(Math.random() * 10) + 1;
+            let num2 = Math.floor(Math.random() * 10) + 1;
+            correctAnswer = num1 + num2;
+            document.getElementById('question').textContent = `${num1} + ${num2} = ?`;
+        }
+
+        function checkAnswer() {
+            let userAnswer = parseInt(document.getElementById('answer').value);
+            if (userAnswer === correctAnswer) {
+                score++;
+                document.getElementById('score').textContent = `Score: ${score}`;
+                resetTimer();
+                generateQuestion();
+            }
+            document.getElementById('answer').value = '';
+        }
+
+        function resetTimer() {
+            timeLeft = 10;
+        }
+
+        function startTimer() {
+            setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').textContent = `Time: ${timeLeft}s`;
+                if (timeLeft === 0) {
+                    alert('Game Over! Skor Anda: ' + score);
+                    location.reload();
+                }
+            }, 1000);
+        }
+
+        generateQuestion();
+        startTimer();
+    </script>
+</body>
+</html>

@@ -1,16 +1,16 @@
 using System;
 using System.Windows.Forms;
-using MathRushWinForms.forms;
 
-namespace MathRushWinForms
+namespace MathRush
 {
-    internal static class Program
+    static class Program
     {
         [STAThread]
         static void Main()
         {
-            ApplicationConfiguration.Initialize(); // Untuk .NET 6 ke atas
-            Application.Run(new Form1()); // Ganti ke ScoreForm jika ScoreForm adalah form utama
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
         }
     }
 }
