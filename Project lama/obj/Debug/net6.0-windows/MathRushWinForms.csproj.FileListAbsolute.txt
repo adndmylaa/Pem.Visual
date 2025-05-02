@@ -1,5 +1,0 @@
-D:\MathRushWinForms\obj\Debug\net6.0-windows\MathRushWinForms.csproj.AssemblyReference.cache
-D:\MathRushWinForms\obj\Debug\net6.0-windows\MathRushWinForms.GeneratedMSBuildEditorConfig.editorconfig
-D:\MathRushWinForms\obj\Debug\net6.0-windows\MathRushWinForms.AssemblyInfoInputs.cache
-D:\MathRushWinForms\obj\Debug\net6.0-windows\MathRushWinForms.AssemblyInfo.cs
-D:\MathRushWinForms\obj\Debug\net6.0-windows\MathRushWinForms.csproj.CoreCompileInputs.cache
